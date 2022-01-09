@@ -20,7 +20,17 @@ function sinNumber(number){
       oddTotal+=parseInt(oddSum[i],10);
     }
     let result = evenTotal + oddTotal;
-    if ((result + parseInt(num[8],10))%10 === 0){
+    let oldResult = result;
+    let check = false;
+    while (check === false){
+      if (result%10===0){
+        check = true;
+        break;
+      }
+      result++;
+    }
+    console.log(result,oldResult);
+    if (oldResult + parseInt(num[num.length-1],10) === result) {
       console.log(true);
     }
     else {
@@ -30,3 +40,5 @@ function sinNumber(number){
 }
 
 sinNumber(193456787)
+sinNumber(193456788)
+sinNumber(0)
